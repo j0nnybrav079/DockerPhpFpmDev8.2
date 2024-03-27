@@ -9,6 +9,8 @@ ARG remoteIp
 RUN echo "UTC" > /etc/timezone
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 
+#set locale
+
 # install composer
 ENV COMPOSER_HOME /composer
 ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
@@ -85,6 +87,7 @@ RUN docker-php-ext-configure \
         pdo \
         pdo_pgsql \
         pdo_mysql \
+        mysqli \
         phar \
         pgsql \
         session \
